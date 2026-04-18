@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOVA</title>
+  <link rel="shortcut icon" href="WhatsApp Image 2026-04-11 at 5.52.49 PM.jpeg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#ffffff;--bg3:#ffffff;
+  --accent:#e45dd0;--accent2:#6c074c;
+  --text:#000000;--text2:#000000;--text3:#000000;
+  --border:rgba(0, 0, 0, 0.18);
+  --font:'Poppins',sans-serif;--inter:'Inter',sans-serif;
+  --radius:12px;--radius-lg:20px;
+}
+body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 4vw;
+  background:rgba(255, 255, 255, 0.72);
+  backdrop-filter:blur(18px);
+  border-bottom:0.5px solid var(--border);
+}
+.nav-logo{font-size:1.5rem;
+  font-weight:900;letter-spacing:.08em;
+  background:linear-gradient(120deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;
+  gap:2rem;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.9rem;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(127,119,221,.12) 0%,transparent 70%);
+}
+.hero-bg-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(var(--border) 1px,transparent 1px),
+    linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,black 30%,transparent 100%);
+}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none}
+.hero-orb-1{width:420px;height:420px;background:var(--accent);top:-80px;left:-60px}
+.hero-orb-2{width:320px;height:320px;background:var(--accent2);bottom:-40px;right:-40px}
+.hero-content{position:relative;text-align:center;padding:2rem}
+.hero-greeting{font-size:1.1rem;color:var(--accent2);letter-spacing:.2em;font-family:var(--inter);margin-bottom:.5rem}
+.hero-name{font-size:clamp(3rem,8vw,6rem);font-weight:900;letter-spacing:-.02em;
+  background:linear-gradient(135deg,#000000 0%,var(--accent) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1}
+.hero-tagline{margin-top:1rem;font-size:1.1rem;color:var(--text2);letter-spacing:.06em;font-family:var(--inter)}
+
+/* SECTIONS */
+.section{padding:6rem 4vw}
+.section-label{
+  display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);border:0.5px solid var(--border);padding:.35rem 1rem;
+  border-radius:100px;margin-bottom:2.5rem;background:rgba(127,119,221,.07)
+}
+
+/* ABOUT */
+.about-section{background:var(--bg2)}
+.about-container{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto}
+.about-text p{color:var(--text2);font-family:var(--inter);font-size:.97rem;line-height:1.85}
+.about-image{border-radius:var(--radius-lg);overflow:hidden;border:0.5px solid var(--border)}
+.about-image img{width:100%;display:block;object-fit:cover}
+
+/* MY WEBSITE */
+.skills-section{background:var(--bg3)}
+.web{margin-top:.5rem}
+.web a{
+  display:inline-block;padding:.7rem 2rem;font-size:1rem;font-weight:600;
+  color:#000000;
+  background-color: rgb(255, 255, 255);
+  text-decoration:none;
+  
+  
+}
+.web a:hover{opacity:.85;
+  color: #6c074c;
+  transform:translateY(-2px)}
+
+/* RESUME & CONTACT */
+.resume-section{background:var(--bg2)}
+.contact-section{background:var(--bg)}
+
+/* FOOTER */
+.footer{background:var(--bg2);border-top:0.5px solid var(--border);padding:2.5rem 0;text-align:center}
+.social-icons{display:flex;justify-content:center;gap:1.4rem;flex-wrap:wrap}
+.social-icons a{
+  display:flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border-radius:50%;
+  border:0.5px solid var(--border);color:var(--text2);font-size:1.1rem;
+  text-decoration:none;transition:color .2s,border-color .2s,transform .15s
+}
+.social-icons a:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-3px)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .about-container{grid-template-columns:1fr}
+  .hero-orb-1,.hero-orb-2{width:220px;height:220px}
+}
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;   /* 👈 THIS aligns vertically */
+  gap: 12px;
+  font-size: 18px;
+}
+
+/* normal icons */
+.contact-item i {
+  font-size: 20px;
+}
+
+/* gmail image fix */
+.gmail-icon {
+  width: 22px;     /* 👈 reduce size */
+  height: 22px;
+  object-fit: contain;
+}
+
+/* colors */
+.fa-phone { color: blue; }
+.fa-whatsapp { color: green; }
+.fa-instagram { color: #ff044b;}
+.fa-facebook{color: #0055ff;}
+.fa-linkedin{color: #2e5acb;}
+.fa-youtube{color: #d50c0c;}
+.fa-github{color: #000;}
+.gmail-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 0.5px solid var(--border);
+
+  transition: 0.3s;
+}
+
+.gmail-link img {
+  width: 22px;   /* 👈 control size */
+  height: 22px;
+  object-fit: contain;
+}
+
+/* hover effect */
+.gmail-link:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+</style></style>
+</style>
+<body>
+
+<!-- ───────────────── NAV ───────────────── -->
+<nav class="nav" id="nav">
+  <div class="nav-logo" id="nav-logo-text">MOVA </div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">My Website</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  
+</nav>
+
+
+<!-- ───────────────── HERO ───────────────── -->
+<section class="hero" id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <p class="hero-greeting">Hello, I'm</p>
+    <h1 class="hero-name" id="hero-name">Mohanraj</h1>
+    <p class="hero-tagline" id="hero-tagline">MOVA - Move Beyond Limits</p>
+  </div>
+</section>
+
+<!-- ───────────────── ABOUT ───────────────── -->
+<section class="section about-section" id="about">
+
+  <div class="about-container">
+
+    <!-- LEFT TEXT -->
+    <div class="about-text">
+      <div class="section-label">About</div>
+      <p>
+        What I need is a web application that functions based on voice commands. 
+        Specifically, users should be able to enter the interface, provide the name
+        of an app along with its corresponding link, and submit it for registration.
+        Once registered, whenever the user opens this web application, the microphone
+        should activate automatically upon entry—requiring absolutely no manual touch 
+        input. Users should then be able to issue a voice command—such as "Open [App
+        Name]"—and the application should automatically locate the registered app name 
+        and launch the associated link. Furthermore, the web application should include
+        a "Settings" option allowing users to secure the app itself—for instance, by
+        enabling a face lock or a numerical passcode—so that voice commands can only
+        
+      </p>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="about-image">
+       Image will be uploaded later📥
+</div>
+
+  </div>
+
+</section>
+
+<!-- ───────────────── My Website ───────────────── -->
+<section class="section skills-section" id="skills">
+  <div class="section-label">My Website</div>
+  <div class="web">
+  <a href="https://mohanraj132212-collab.github.io/ID-chat/">* ID Chat</a>
+  
+  
+  </div>
+  
+ 
+</section>
+<!-- ───────────────── RESUME ───────────────── -->
+<section class="section resume-section" id="resume">
+  <div class="section-label">Resume</div>
+</section>
+
+<!-- ───────────────── CONTACT ───────────────── -->
+<section class="section contact-section" id="contact">
+  <div class="section-label">Contact</div>
+
+ <div class="contact-box">
+
+  <div class="contact-item">
+    <i class="fas fa-phone"></i>
+    <span>6380683705</span>
+  </div>
+
+  <div class="contact-item">
+    <i class="fab fa-whatsapp"></i>
+    <span>6380683705</span>
+  </div>
+
+  <div class="contact-item">
+    <img src="Screenshot 2026-04-18 083252.png" class="gmail-icon">
+    <span>mohanraj132212@email.com</span>
+  </div>
+
+</div>
+</section>
+
+<!-- ───────────────── FOOTER ───────────────── -->
+<footer class="footer">
+ <div class="social-icons">
+
+  <a href="https://www.instagram.com/mohan._2_2?igsh=MWVsbGIybDk0ZmQyOA==" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://www.facebook.com/share/1CWPgbdvnR/" target="_blank">
+    <i class="fab fa-facebook"></i>
+  </a>
+
+  <a href="https://github.com/mohanraj132212-collab" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="www.linkedin.com/in/
+mohan-raj-983b2b371" target="_blank">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="https://youtube.com/@mohanraj22-t1d?si=LpU0lOG-tLrJglNq" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+
+  <a href="mailto:mohanraj132212@email.com" target="_blank" class="gmail-link">
+  <img src="Screenshot 2026-04-18 083252.png" alt="gmail">
+</a>
+
+  <a href="https://wa.me/916380683705" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</div>
+</footer>
+</body>
+
+</html>
