@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MOVA</title>
+  <title>VAMZZ</title>
   <link rel="shortcut icon" href="WhatsApp Image 2026-04-11 at 5.52.49 PM.jpeg" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -30,10 +30,29 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:
   backdrop-filter:blur(18px);
   border-bottom:0.5px solid var(--border);
 }
-.nav-logo{font-size:1.5rem;
-  font-weight:900;letter-spacing:.08em;
-  background:linear-gradient(120deg,var(--accent),var(--accent2));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-logo{
+  display: flex;
+  align-items: center;   /* vertical center */
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.nav-logo span{
+  background: linear-gradient(120deg,var(--accent),var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* PERFECT CIRCLE LOGO */
+.nav-logo img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;   /* makes circle */
+  object-fit: cover;    /* no distortion */
+  display: block;
+}
 .nav-links{display:flex;
   gap:2rem;list-style:none}
 .nav-links a{color:var(--text2);text-decoration:none;font-size:.9rem;transition:color .2s}
@@ -179,7 +198,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:
 
 <!-- ───────────────── NAV ───────────────── -->
 <nav class="nav" id="nav">
-  <div class="nav-logo" id="nav-logo-text">MOVA </div>
+  <div class="nav-logo">
+  <img src="Logo.png" alt="logo">
+  <span>VAMZZ</span>
+</div>
   <ul class="nav-links">
     <li><a href="#hero">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -199,7 +221,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:
   <div class="hero-content">
     <p class="hero-greeting">Hello, I'm</p>
     <h1 class="hero-name" id="hero-name">Mohanraj</h1>
-    <p class="hero-tagline" id="hero-tagline">MOVA - Move Beyond Limits</p>
+    <p class="hero-tagline" id="hero-tagline">VAMZZ - From Vision to Zenith</p>
   </div>
 </section>
 
@@ -240,6 +262,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:
   <div class="section-label">My Website</div>
   <div class="web">
   <a href="https://mohanraj132212-collab.github.io/ID-chat/">* ID Chat</a>
+  <a href="https://mohanraj132212-collab.github.io/Moin/">* Moin</a>
   
   
   </div>
